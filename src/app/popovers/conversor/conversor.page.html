@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Conversor</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+      <ion-item>
+          <ion-label position="floating">Cantdiad</ion-label>
+          <ion-input type="number" [value]="quantity" (input)="setQuantity($event.target.value)"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label position="floating">De:</ion-label>
+          <ion-select [value]="source" (ionChange)="optionsFn1($event.target.value)">
+            <ion-select-option *ngFor="let c of target">{{c}}</ion-select-option>
+          </ion-select>
+          <ion-label position="floating">A:</ion-label>
+          <ion-select [value]="targett" (ionChange)="optionsFn2($event.target.value)">
+              <ion-select-option *ngFor="let d of target">{{d}}</ion-select-option>
+          </ion-select>
+        </ion-item>
+        <br>
+        <div>
+            <div id="con">
+                <ion-button id="btn" (click)="Conversor(source, targett )">Convertir</ion-button>
+            </div>
+              <hr>
+            <div>
+              <ion-label id="label">&nbsp;&nbsp;Valor actual:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</ion-label>
+              <ion-label id="valor">${{result.value}}</ion-label>
+            </div>
+              <hr>
+            <div>
+              <ion-label id="label">&nbsp;&nbsp;Convercion:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</ion-label>
+              <ion-label id="valor">{{targett}}/{{source}}</ion-label>
+            </div>
+              <hr>
+            <div>
+              <ion-label id="label">&nbsp;&nbsp;Cantidad:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</ion-label>
+              <ion-label id="valor">{{quantity}}</ion-label>
+            </div>
+        </div>
+</ion-content>

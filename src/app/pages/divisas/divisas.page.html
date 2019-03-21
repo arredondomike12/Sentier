@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-toolbar color="primary">
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+    <ion-title>Divisas</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list *ngFor="let i of Tuplas">
+    <ion-item [routerLink]="['/grafica', i.symbol]">
+        <ion-avatar item-left>
+            <img src="assets/img/{{i.symbol}}.png">
+          </ion-avatar>
+        <ion-label>&nbsp;&nbsp;&nbsp;{{i.symbol}}</ion-label>
+        <ion-label>=></ion-label>
+        <ion-label>{{i.price}}</ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>
